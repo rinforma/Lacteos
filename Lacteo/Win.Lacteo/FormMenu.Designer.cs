@@ -129,8 +129,8 @@
             // reporteDeLacteosToolStripMenuItem
             // 
             this.reporteDeLacteosToolStripMenuItem.Name = "reporteDeLacteosToolStripMenuItem";
-            this.reporteDeLacteosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.reporteDeLacteosToolStripMenuItem.Text = "Reporte Proveedor";
+            this.reporteDeLacteosToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.reporteDeLacteosToolStripMenuItem.Text = "Reporte de Proveedores";
             this.reporteDeLacteosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeLacteosToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
