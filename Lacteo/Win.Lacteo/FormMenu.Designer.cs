@@ -38,6 +38,9 @@
             this.reporteDeLacteosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosEnExistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosEliminadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +62,15 @@
             this.productosToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.lacteosToolStripMenuItem.Name = "lacteosToolStripMenuItem";
-            this.lacteosToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.lacteosToolStripMenuItem.Text = "Lacteos";
+            this.lacteosToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.lacteosToolStripMenuItem.Text = "Inicio";
             // 
             // productosToolStripMenuItem
             // 
+            this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoProductoToolStripMenuItem,
+            this.productosEnExistenciaToolStripMenuItem,
+            this.productosEliminadosToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -102,7 +109,8 @@
             // 
             this.reporteDeLacteosToolStripMenuItem.Name = "reporteDeLacteosToolStripMenuItem";
             this.reporteDeLacteosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.reporteDeLacteosToolStripMenuItem.Text = "Reporte de Lacteos";
+            this.reporteDeLacteosToolStripMenuItem.Text = "Reporte Proveedor";
+            this.reporteDeLacteosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeLacteosToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -118,6 +126,24 @@
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+            // 
+            // nuevoProductoToolStripMenuItem
+            // 
+            this.nuevoProductoToolStripMenuItem.Name = "nuevoProductoToolStripMenuItem";
+            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.nuevoProductoToolStripMenuItem.Text = "Nuevo Producto";
+            // 
+            // productosEnExistenciaToolStripMenuItem
+            // 
+            this.productosEnExistenciaToolStripMenuItem.Name = "productosEnExistenciaToolStripMenuItem";
+            this.productosEnExistenciaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.productosEnExistenciaToolStripMenuItem.Text = "Productos en Existencia";
+            // 
+            // productosEliminadosToolStripMenuItem
+            // 
+            this.productosEliminadosToolStripMenuItem.Name = "productosEliminadosToolStripMenuItem";
+            this.productosEliminadosToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.productosEliminadosToolStripMenuItem.Text = "Productos Eliminados";
             // 
             // FormMenu
             // 
@@ -150,5 +176,8 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDeLacteosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosEnExistenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosEliminadosToolStripMenuItem;
     }
 }

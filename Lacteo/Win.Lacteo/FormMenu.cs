@@ -46,5 +46,10 @@ namespace Win.Lacteo
         {
             login();
         }
+
+        private void reporteDeLacteosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
