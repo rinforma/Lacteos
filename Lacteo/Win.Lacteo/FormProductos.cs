@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Lacteos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace Win.Lacteo
 {
     public partial class FormProductos : Form
     {
+        ProductosBL _productos;
         public FormProductos()
         {
             InitializeComponent();
+            _productos = new ProductosBL();
+            listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
+        }
+
+        private void listaProductosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

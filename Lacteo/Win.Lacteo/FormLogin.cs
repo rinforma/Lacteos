@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Lacteos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace Win.Lacteo
 {
     public partial class FormLogin : Form
     {
+        SeguridadBL seguridad;
+
         public FormLogin()
         {
             InitializeComponent();
+
+            seguridad = new SeguridadBL();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -30,7 +35,9 @@ namespace Win.Lacteo
             usuario = textBox1.Text;
             contraseña = textBox2.Text;
 
-            if (usuario == "admin" && contraseña == "1234" || usuario == "coord" && contraseña == "123")
+            var resultado = seguridad.Autorizar(usuario, contraseña);
+
+            if (resultado == true)
             {
                 this.Close();
             }
