@@ -41,6 +41,24 @@ namespace BL.Lacteos
             producto3.Activo = true;
 
             ListaProductos.Add(producto3);
+
+            var producto4= new Producto();
+            producto3.ID = 4;
+            producto3.Descripcion = "Requezon";
+            producto3.Precio = 50;
+            producto3.Existencia = 10;
+            producto3.Activo = true;
+
+            ListaProductos.Add(producto4);
+
+            var producto5 = new Producto();
+            producto3.ID = 5;
+            producto3.Descripcion = "Quajada";
+            producto3.Precio = 50;
+            producto3.Existencia = 4;
+            producto3.Activo = true;
+
+            ListaProductos.Add(producto5);
         }
         public BindingList<Producto> ObtenerProductos()
         {
