@@ -25,5 +25,28 @@ namespace Win.Lacteo
         {
 
         }
+
+        private void listaProductosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            listaProductosBindingSource.EndEdit();
+            var producto = (Producto) listaProductosBindingSource.Current;
+
+            var resultado = _productos.GuardarProducto(producto);
+            
+            if(resultado == true)
+            {
+                listaProductosBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("ocurrio un error al momento de guardar el producto");
+            }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            _productos.AgregarProduto();
+            listaProductosBindingSource.MoveLast();
+        }
     }
 }

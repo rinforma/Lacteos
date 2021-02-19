@@ -12,6 +12,7 @@ namespace BL.Lacteos
        public BindingList<Producto> ListaProductos { get; set; }
 
         public ProductosBL()
+
         {
             ListaProductos = new BindingList<Producto>();
 
@@ -63,6 +64,19 @@ namespace BL.Lacteos
         public BindingList<Producto> ObtenerProductos()
         {
             return ListaProductos;
+        }
+        public bool GuardarProducto(Producto producto)
+        {
+            if(producto.ID == 0)
+            {
+                producto.ID = ListaProductos.Max(item => item.ID) + 1;
+            }
+            return true;
+        }
+        public void AgregarProduto()
+        {
+            var nuevoProducto = new Producto();
+            ListaProductos.Add(nuevoProducto);
         }
     }
     public class Producto
