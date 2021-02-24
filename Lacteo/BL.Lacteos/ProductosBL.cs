@@ -65,18 +65,61 @@ namespace BL.Lacteos
         {
             return ListaProductos;
         }
-        public bool GuardarProducto(Producto producto)
+        public Resultado GuardarProducto(Producto producto)
         {
+            var resultado = validar(producto);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
             if(producto.ID == 0)
             {
                 producto.ID = ListaProductos.Max(item => item.ID) + 1;
             }
-            return true;
+            resultado.Exitoso =true;
+            return resultado;
         }
         public void AgregarProduto()
         {
             var nuevoProducto = new Producto();
             ListaProductos.Add(nuevoProducto);
+        }
+        public bool EliminarProducto(int ID)
+        {
+            foreach (var producto in ListaProductos)
+            {
+                if (producto.ID == ID)
+                {
+                    ListaProductos.Remove(producto);
+                    return true;
+                }
+            }
+            return false;
+        }
+        private Resultado validar(Producto producto)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (string.IsNullOrEmpty(producto.Descripcion)== true)
+            {
+                resultado.Mensaje = "ingrese una descripcion";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Existencia < 0)
+            {
+                resultado.Mensaje = "la existencia debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Precio > 0)
+            {
+                resultado.Mensaje = "el precio debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
         }
     }
     public class Producto
@@ -87,5 +130,11 @@ namespace BL.Lacteos
         public int Existencia { get; set; }
         public bool Activo { get; set; }
 
+    }
+
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
     }
 }
