@@ -15,6 +15,5 @@ namespace BL.Lacteos
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-        public DbSet<Producto> Productos { get; set; }
-    }
+        public DbSet<Producto> Productos { get; set; }   
 }

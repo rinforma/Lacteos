@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,15 @@ namespace Win.Lacteo
         {
             listaProductosBindingSource.EndEdit();
             var producto = (Producto) listaProductosBindingSource.Current;
+
+            if(fotoPictureBox.Image != null)
+            {
+                producto.foto = Program.imageToByteArray(fotoPictureBox.Image);
+            }
+            else
+            {
+                producto.foto = null;
+            }
 
             var resultado = _productos.GuardarProducto(producto);
             
@@ -100,6 +110,35 @@ namespace Win.Lacteo
         {
             DeshabilitarHabilitarBotones(true);
             Eliminar(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var producto = (Producto)listaProductosBindingSource.Current;
+
+            if (producto != null)
+            {
+                openFileDialog1.ShowDialog();
+                var archivo = openFileDialog1.FileName;
+
+                if (archivo != "")
+                {
+                    var fileInfo = new FileInfo(archivo);
+                    var fileString = fileInfo.OpenRead();
+
+                    fotoPictureBox.Image = Image.FromStream(fileString);
+                }
+            }
+            else
+            {
+                MessageBox.Show("cree un producto antes de asignarle  la imagen");
+            }
+        
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fotoPictureBox.Image = null;
         }
     }
 }
