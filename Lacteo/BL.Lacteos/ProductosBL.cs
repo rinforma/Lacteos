@@ -92,6 +92,8 @@ namespace BL.Lacteos
         public string Descripcion { get; set; }
         public double Precio { get; set; }
         public int Existencia { get; set; }
+        public int TipoLacteosID { get; set; }
+        public TipoLacteos TipoLacteos { get; set; }
         public byte[] foto { get; set; }
         public bool Activo { get; set; }
 

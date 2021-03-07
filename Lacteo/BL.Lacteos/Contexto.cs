@@ -14,6 +14,8 @@ namespace BL.Lacteos
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());
         }
-        public DbSet<Producto> Productos { get; set; }   
-}
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<TipoLacteos> TipoLacteos { get; set; }
+    }
