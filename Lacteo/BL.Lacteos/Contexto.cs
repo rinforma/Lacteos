@@ -18,4 +18,5 @@ namespace BL.Lacteos
         }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<TipoLacteos> TipoLacteos { get; set; }
+        public DbSet<categoria> Categorias { get; internal set; }
     }
